@@ -29,6 +29,7 @@ export default function Home({ }) {
   const [images, setImages] = useState<PhotoType | null>();
   const [value] = useDebounce(search, 300)
   useEffect(() => {
+
     const FetchImage = async () => {
       const res = await fetch(`https://api.unsplash.com/search/photos?page=3&query=${(search == "") ? "pakistan" : search}&client_id=KhTg2I6eh3aifPUzKU6EtKXGIfQXkwaiSmD14ZLK-g0`)
       const data = await res.json()
